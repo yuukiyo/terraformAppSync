@@ -18,6 +18,7 @@ input CreateExampleInput {
 
 type Example {
 	Title: String!
+	Message: String!
 }
 
 type ExampleConnection {
