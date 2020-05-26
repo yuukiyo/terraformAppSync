@@ -12,13 +12,22 @@ resource "aws_appsync_graphql_api" "example" {
     field_log_level          = "ERROR"
   }
   schema = <<EOF
+schema {
+	query: Query
+	mutation: Mutation
+	subscription: Subscription
+}
+
 input CreateExampleInput {
 	Title: String!
+	Message: String!
+	None: String
 }
 
 type Example {
 	Title: String!
 	Message: String!
+	None: String!
 }
 
 type ExampleConnection {
